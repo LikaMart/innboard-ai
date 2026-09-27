@@ -902,3 +902,12 @@ html[lang="ka"] #page-home .eyebrow,html[lang="ka"] #page-home .role-q{font-weig
 /* No scrollbar inside the phone frame */
 html.embedded{scrollbar-width:none}
 html.embedded::-webkit-scrollbar{display:none}
+
+/* Install app button */
+.install-btn{position:relative;border-color:transparent;background:transparent;color:var(--acc)}
+.install-btn:hover{border-color:var(--acc)}
+.install-btn .device-tip{top:calc(100% + 10px);bottom:auto}
+.install-btn:hover .device-tip,.install-btn:focus-visible .device-tip{opacity:1;transform:translate(-50%,0)}
+.embedded .install-btn,.embedded [data-install]{display:none!important}
+/* Installed app: respect the phone's notch / home bar */
+@media (display-mode: standalone){.site-header{padding-top:env(safe-area-inset-top,0px)}}

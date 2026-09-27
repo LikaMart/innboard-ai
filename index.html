@@ -4,8 +4,16 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Innboard.ai | სასტუმროს დიასახლისის ასისტენტი</title>
-  <meta name="description" content=" სწორი ქიმია შესაბამის ზედაპირზე , გადაუღე ფოტო და AI გეტყვის რა და როგორ გაწმინდო ">
+  <meta name="description" content="სწორი ქიმია სწორ ზედაპირზე. გადაუღე ფოტო და AI გეტყვის, რით და როგორ გაწმინდო">
   <meta name="theme-color" content="#0b0b0c">
+  <!-- Web app (PWA): installable on phones and computers -->
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Innboard">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="application-name" content="Innboard">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20200%20200%22%3E%3Crect%20x%3D%222%22%20y%3D%222%22%20width%3D%22196%22%20height%3D%22196%22%20rx%3D%2246%22%20fill%3D%22%230b0b0c%22%20stroke%3D%22%232e2e33%22%20stroke-width%3D%222%22/%3E%3Cpath%20d%3D%22M40%2098%20L100%2046%20L160%2098%22%20fill%3D%22none%22%20stroke%3D%22%23ff6a1a%22%20stroke-width%3D%2215%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22/%3E%3Cpath%20d%3D%22M62%20124%20l10%2010%20l19%20-21%22%20fill%3D%22none%22%20stroke%3D%22%23ffa066%22%20stroke-width%3D%2210%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22/%3E%3Cpath%20d%3D%22M108%20125%20H138%22%20stroke%3D%22%23ff6a1a%22%20stroke-width%3D%2210%22%20stroke-linecap%3D%22round%22/%3E%3Cpath%20d%3D%22M62%20152%20H138%22%20stroke%3D%22%23ff6a1a%22%20stroke-width%3D%2210%22%20stroke-linecap%3D%22round%22/%3E%3Cpath%20d%3D%22M156%2026%20q2%2012%2014%2014%20q-12%202%20-14%2014%20q-2%20-12%20-14%20-14%20q12%20-2%2014%20-14z%22%20fill%3D%22%23fff%22/%3E%3C/svg%3E">
   <!-- Social sharing -->
   <meta property="og:type" content="website">
@@ -56,6 +64,11 @@
           <button type="button" data-lang="en" title="English">EN</button>
           <button type="button" data-lang="ru" title="Русский">RU</button>
         </div>
+        <!-- Install as app (appears only when the browser supports it) -->
+        <button type="button" class="icon-btn install-btn" data-install hidden data-i18n-aria="pwa.install" aria-label="აპის დაყენება">
+          <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>
+          <span class="device-tip" data-i18n="pwa.install">აპის დაყენება</span>
+        </button>
         <!-- Mobile view: shows the site in a phone frame -->
         <button type="button" class="icon-btn device-hdr" data-device-open aria-pressed="false" data-i18n-aria="mobile.btn" aria-label="მობილური ვერსია">
           <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="3" width="10" height="18" rx="2.5"/><path d="M11 17.5h2"/></svg>
@@ -89,6 +102,7 @@
       <button type="button" class="lang" data-lang="en">English</button>
       <button type="button" class="lang" data-lang="ru">Русский</button>
     </div>
+    <button type="button" class="btn ghost" data-install hidden><span data-i18n="pwa.install">აპის დაყენება</span></button>
     <a class="btn" href="#/login" data-i18n="nav.login">შესვლა</a>
   </div>
 
@@ -428,7 +442,7 @@
         <div>
           <h4 data-i18n="nav.app">ასისტენტი</h4>
           <ul data-footlinks="hk"></ul>
-        </div> 
+        </div>
         <div>
           <h4 data-i18n="role.mg">მენეჯერი</h4>
           <ul data-footlinks="mg"></ul>

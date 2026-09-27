@@ -637,6 +637,9 @@ const S={
 'contact.fail':['გაგზავნა ვერ მოხერხდა. სცადე ხელახლა.','Could not send. Please try again.','Не удалось отправить. Попробуйте ещё раз.'],
 'contact.okT':['მადლობა!','Thank you!','Спасибо!'],
 'contact.again':['კიდევ ერთი შეტყობინება','Send another message','Отправить ещё одно сообщение'],
+'pwa.install':[null,'Install app','Установить приложение'],
+'pwa.done':['აპი დაყენებულია','App installed','Приложение установлено'],
+'pwa.ios':['iPhone-ზე: დააჭირე „გაზიარებას“ და აირჩიე „Add to Home Screen“','On iPhone: tap Share, then Add to Home Screen','На iPhone: нажмите «Поделиться», затем «На экран Домой»'],
 'mobile.btn':[null,'Mobile view','Мобильная версия'],
 'mobile.close':['მობილური ხედის დახურვა','Close mobile view','Закрыть мобильный вид'],
 'a11y.top':['ზემოთ დაბრუნება','Back to top','Наверх'],
@@ -1690,6 +1693,26 @@ window.addEventListener('hashchange',route);
 route();
 onScroll();
 document.documentElement.classList.add('ready');
+
+/* ---------- Web app (PWA) ---------- */
+/* Service worker: offline support. Works on https (Vercel, GitHub Pages) and localhost. */
+if('serviceWorker' in navigator&&/^https?:$/.test(location.protocol)&&!EMBEDDED_PAGE()){
+  window.addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));
+}
+function EMBEDDED_PAGE(){return new URLSearchParams(location.search).get('view')==='mobile'}
+/* Install button: shown only when the browser offers installation */
+let installEvt=null;
+const standalone=()=>window.matchMedia('(display-mode: standalone)').matches||navigator.standalone===true;
+const isIOS=/iphone|ipad|ipod/i.test(navigator.userAgent);
+function showInstall(on){$$('[data-install]').forEach(b=>{b.hidden=!on})}
+window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();installEvt=e;showInstall(true)});
+window.addEventListener('appinstalled',()=>{installEvt=null;showInstall(false);toast(t('pwa.done'))});
+if(isIOS&&!standalone())showInstall(true);
+document.addEventListener('click',async e=>{
+  if(!e.target.closest('[data-install]'))return;
+  if(installEvt){installEvt.prompt();const r=await installEvt.userChoice;if(r.outcome==='accepted')showInstall(false);installEvt=null}
+  else if(isIOS)toast(t('pwa.ios'));
+});
 
 /* ---------- Mobile preview: the site inside a phone frame ---------- */
 /* Inside the frame the page gets ?view=mobile, which hides the preview button */
