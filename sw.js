@@ -1,6 +1,6 @@
 /* Innboard.ai service worker: makes the site installable and usable offline.
    Change VERSION whenever you upload new files, so users get the update. */
-const VERSION = 'innboard-v1';
+const VERSION = 'innboard-v2';
 const CORE = [
   './',
   './index.html',

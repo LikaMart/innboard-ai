@@ -911,3 +911,14 @@ html.embedded::-webkit-scrollbar{display:none}
 .embedded .install-btn,.embedded [data-install]{display:none!important}
 /* Installed app: respect the phone's notch / home bar */
 @media (display-mode: standalone){.site-header{padding-top:env(safe-area-inset-top,0px)}}
+
+
+/* Directions: one block instead of ten separate boxes */
+.tiles.home{gap:0!important;border:1px solid var(--line);border-radius:20px;overflow:hidden;background:var(--card)}
+.tiles.home .tile{border:0;border-radius:0;border-bottom:1px solid var(--line);background:transparent}
+.tiles.home .tile:hover,.ready .tiles.home .tile.reveal.in:hover{background:var(--card2);transform:none}
+.tiles.home .tile:last-child{border-bottom:0}
+@media (min-width:761px){
+  .tiles.home .tile:nth-child(even){border-left:1px solid var(--line)}
+  .tiles.home .tile:nth-last-child(2):nth-child(odd){border-bottom:0}
+}
