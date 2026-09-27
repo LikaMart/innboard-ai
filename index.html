@@ -58,11 +58,16 @@
       </nav>
 
       <div class="hdr-tools">
-        <!-- Language switcher -->
-        <div class="lang-switch" role="group" aria-label="Language">
-          <button type="button" data-lang="ka" title="ქართული">KA</button>
-          <button type="button" data-lang="en" title="English">EN</button>
-          <button type="button" data-lang="ru" title="Русский">RU</button>
+        <!-- Language: globe button with a small menu -->
+        <div class="lang-menu" id="langMenu">
+          <button type="button" class="icon-btn lang-toggle" id="langToggle" aria-haspopup="menu" aria-expanded="false" aria-controls="langPop" data-i18n-aria="a11y.lang" aria-label="ენა">
+            <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>
+          </button>
+          <div class="lang-pop" id="langPop" role="menu" hidden>
+            <button type="button" role="menuitemradio" data-lang="ka"><span>ქართული</span><small>KA</small></button>
+            <button type="button" role="menuitemradio" data-lang="en"><span>English</span><small>EN</small></button>
+            <button type="button" role="menuitemradio" data-lang="ru"><span>Русский</span><small>RU</small></button>
+          </div>
         </div>
         <!-- Install as app (appears only when the browser supports it) -->
         <button type="button" class="icon-btn install-btn" data-install hidden data-i18n-aria="pwa.install" aria-label="აპის დაყენება">
