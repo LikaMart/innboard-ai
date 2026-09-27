@@ -93,7 +93,7 @@ const S={
 
 /* welcome / home */
 'welcome.hero':[null,'Smart assistant for hotel housekeepers','Умный ассистент горничной отеля'],
-'welcome.lead':[null,'The right chemical on the right surface. Take a photo and AI will tell you what to clean it with and how','Правильная химия на правильной поверхности. Сделайте фото, и AI подскажет, чем и как очистить'],
+'welcome.lead':[null,'The right chemical for the matching surface. Take a photo and AI will tell you what to clean and how','Правильная химия для подходящей поверхности. Сделайте фото, и AI подскажет, что и как очистить'],
 'welcome.chip1':['ფოტო-ანალიზი','Photo analysis','Фотоанализ'],
 'welcome.chip2':['ქიმია და ზედაპირები','Chemicals and surfaces','Химия и поверхности'],
 'welcome.chip3':[null,'AI assistant','AI-ассистент'],
@@ -102,8 +102,6 @@ const S={
 'welcome.agree':[null,'By continuing you agree to the','Продолжая, вы принимаете'],
 'welcome.terms':[null,'terms and conditions','правила и условия'],
 'home.seeFeatures':[null,'See the features','Смотреть возможности'],
-'home.how':[null,'How it works','Как это работает'],
-'home.how3':[null,'AI will tell you whether it can be used on this surface.','AI скажет, можно ли использовать его на этой поверхности.'],
 'home.ctaT':['ფოტო-შემოწმება','Photo check','Фотопроверка'],
 'home.ctaD':['გადაუღე ზედაპირს წმენდამდე და გაიგე, რა ქიმია შეიძლება','Photograph the surface before cleaning and find out which chemicals are safe','Сфотографируйте поверхность до уборки и узнайте, какая химия допустима'],
 'home.dirs':['მიმართულებები','Sections','Разделы'],
@@ -648,6 +646,10 @@ const S={
 'restored':['ცვლილებები შენახულია ამ მოწყობილობაზე','Changes are saved on this device','Изменения сохранены на этом устройстве']
 };
 
+/* Georgian text from index.html (original version) */
+const KA_HTML={"a11y.skip":"გადასვლა შინაარსზე","nav.home":"მთავარი","nav.features":"შესაძლებლობები","nav.app":"ასისტენტი","nav.about":"ჩვენ შესახებ","nav.contact":"კონტაქტი","pwa.install":"აპის დაყენება","mobile.btn":"მობილური ვერსია","nav.login":"შესვლა","nav.manager":"მენეჯერის პანელი","welcome.pickLang":"აირჩიე ენა","nojs":"საიტის გამოსაყენებლად ჩართე JavaScript.","welcome.chip3":"AI ასისტენტი","welcome.hero":"სასტუმროს დიასახლისის ჭკვიანი ასისტენტი","welcome.lead":"სწორი ქიმია შესაბამის ზედაპირზე. გადაუღე ფოტო და AI გეტყვის, რა და როგორ გაწმინდო","role.big":"ვინ ხარ სასტუმროში?","role.hk":"დიასახლისი","role.hkD":"ფოტო-შემოწმება, ქიმია, სტანდარტები, მენეჯერის დავალებები","role.mg":"მენეჯერი","role.mgD":"პრიორიტეტები, რეკომენდაციები, კითხვებზე პასუხი","home.seeFeatures":"ნახე შესაძლებლობები","photo.anl":"AI აანალიზებს ფოტოებს…","verdict.no":"არ გამოიყენო","verdict.surface":"ზედაპირი","hero.surface":"მარმარილო (კალციტური ქვა), გაპრიალებული","verdict.instead":"სანაცვლოდ გამოიყენე","hero.instead":"pH-ნეიტრალური ქვის საწმენდი და რბილი მიკროფიბრა; თუ არ გაქვს - ნეიტრალური ჭურჭლის სითხის სუსტი ხსნარი.","home.ctaT":"ფოტო-შემოწმება","std.o1":"1 · მენეჯერი","feat.big":"შესაძლებლობები","feat.lead":"ყველაფერი, რაც დიასახლისს და მენეჯერს ცვლის განმავლობაში სჭირდება, ერთ ადგილას.","about.big":"ჭკვიანი ასისტენტი სასტუმროს გუნდისთვის","terms.c1":"Innboard.ai ეხმარება სასტუმროს თანამშრომლებს ზედაპირისთვის სწორი ქიმიისა და ინსტრუმენტის შერჩევაში.","about.missionT":"ჩვენი მიზანი","chem.lead":"არასწორი ქიმია ძვირადღირებულ ზედაპირს შეიძლება სამუდამოდ დააზიანოს. სწორი არჩევანით პრობლემებს ავირიდებთ.","about.missionD":"დიასახლისი ფოტოს უღებს ზედაპირს და საშუალებას, AI კი წამებში ეუბნება, შეიძლება თუ არა მისი გამოყენება. მენეჯერი ხედავს შემოწმებებს, აძლევს პრიორიტეტებს და გეგმავს დატვირთვას.","about.whoT":"ვისთვისაა","about.who1":"დიასახლისისთვის, რომელსაც სწრაფი და ზუსტი პასუხი სჭირდება ოთახშივე","about.who2":"მენეჯერისთვის, რომელიც აკონტროლებს ხარისხს და გუნდის დატვირთვას","about.who3":"სასტუმროსთვის, რომელსაც სურს ძვირადღირებული ზედაპირების დაცვა","about.valuesT":"ჩვენი პრინციპები","std.order":"AI რჩევის რიგი","recs.note":"ეს რჩევები AI-სთვის პირველი პრიორიტეტია: ასისტენტი ჯერ მენეჯერის სიტყვას ითვალისწინებს.","exp.big":"ისწავლე სხვის შეცდომაზე","exp.lead":"რეალური შემთხვევები რეგიონული სასტუმროებიდან: რა მოხდა, როგორ გამოასწორეს და რა გაკვეთილი დარჩა.","mech.big":"სწორი ინსტრუმენტი სწორ ზედაპირზე","mech.lead":"არასწორი ღრუბელი ან პადი ზედაპირს ისევე აზიანებს, როგორც არასწორი ქიმია.","about.ctaT":"გინდა Innboard.ai შენს სასტუმროში?","about.ctaD":"მოგვწერე და გაჩვენებთ, როგორ მუშაობს შენს სასტუმროში.","contact.big":"დაგვიკავშირდი","contact.lead":"გაქვს კითხვა ან გინდა Innboard.ai შენს სასტუმროში? შეავსე ფორმა და მალე გიპასუხებთ.","contact.name":"სახელი","contact.hotel":"სასტუმროს სახელი","login.label":"ტელეფონის ნომერი","contact.email":"ელ-ფოსტა","contact.msg":"შეტყობინება","msend.send":"გაგზავნა","contact.okT":"მადლობა!","contact.sent":"შეტყობინება გაიგზავნა. მალე გიპასუხებთ","contact.again":"კიდევ ერთი შეტყობინება","contact.emailPh":"[ელ-ფოსტა]","contact.addr":"მისამართი","contact.addrPh":"[მისამართი]","contact.hoursT":"სამუშაო საათები","contact.hours":"ორშაბათი - პარასკევი · 10:00-19:00","terms.t":"წესები და პირობები","terms.lead":"ეს გვერდი შაბლონია - ჩაწერე აქ შენი სერვისის პირობები.","terms.h1":"1. სერვისის აღწერა","terms.h2":"2. პერსონალური მონაცემები","terms.c2":"ტელეფონის ნომერი გამოიყენება მხოლოდ შესვლისთვის. ფოტოები ინახება სასტუმროს ანგარიშში.","terms.h3":"3. პასუხისმგებლობა","terms.c3":"AI რჩევა დამხმარეა. საეჭვო შემთხვევაში მიმართე მენეჯერს.","login.big":"შესვლა ტელეფონით","login.lead":"მიუთითე ნომერი და გამოგიგზავნით 4-ნიშნა კოდს SMS-ით","login.info":"შესვლა შეგიძლია იმ ნომრით, რომელიც შენმა მენეჯერმა დაამატა. ნომერი ვერ მოიძებნა? მიმართე მენეჯერს","login.get":"კოდის მიღება","otp.big":"შეიყვანე კოდი","otp.sent":"კოდი გაიგზავნა ნომერზე","otp.change":"შეცვლა","otp.resend":"კოდი არ მოგივიდა? ხელახლა გაგზავნა","otp.confirm":"დადასტურება","role.lead":"[სასტუმროს სახელი] · აირჩიე შენი როლი","role.hint":"როლს მენეჯერი ანიჭებს თანამშრომლის დამატებისას","welcome.agree":"გაგრძელებით ეთანხმები","welcome.terms":"წესებს და პირობებს","nf.t":"გვერდი ვერ მოიძებნა","nf.d":"ბმული შეიძლება შეცვლილია ან წაშლილი.","nf.back":"მთავარზე დაბრუნება","foot.site":"საიტი","foot.rights":"ყველა უფლება დაცულია","a11y.theme":"თემის შეცვლა","a11y.menu":"მენიუ"};
+Object.keys(KA_HTML).forEach(k=>{if(S[k]&&S[k][0]==null)S[k][0]=KA_HTML[k]});
+
 
 /* ---------- 3. Content data ---------- */
 /* Georgian content (source text from the design) */
@@ -903,8 +905,13 @@ let LANG=(()=>{const s=store.get(LS_LANG);return LANGS.includes(s)?s:'ka'})();
 
 /* Georgian text that lives in index.html is collected once, so the page can switch back to Georgian */
 function harvestGeorgian(){
-  $$('[data-i18n]').forEach(el=>{const k=el.dataset.i18n;if(S[k]&&S[k][0]==null)S[k][0]=el.innerHTML.trim()});
-  $$('[data-i18n-aria]').forEach(el=>{const k=el.dataset.i18nAria;if(S[k]&&S[k][0]==null)S[k][0]=el.getAttribute('aria-label')});
+  /* Georgian text edited in index.html wins over the built-in copy.
+     If the same text appears twice, the edited copy is used everywhere. */
+  const edited={};
+  $$('[data-i18n]').forEach(el=>{const k=el.dataset.i18n,v=el.innerHTML.trim();if(!S[k])return;
+    if(S[k][0]==null)S[k][0]=v;else if(v!==S[k][0]&&!(k in edited))edited[k]=v});
+  Object.keys(edited).forEach(k=>{S[k][0]=edited[k]});
+  $$('[data-i18n-aria]').forEach(el=>{const k=el.dataset.i18nAria;if(S[k])S[k][0]=el.getAttribute('aria-label')});
 }
 
 /* Translate a key. Falls back to Georgian, then to the key itself. */

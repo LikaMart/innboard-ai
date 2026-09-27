@@ -912,7 +912,6 @@ html.embedded::-webkit-scrollbar{display:none}
 /* Installed app: respect the phone's notch / home bar */
 @media (display-mode: standalone){.site-header{padding-top:env(safe-area-inset-top,0px)}}
 
-
 /* Directions: one block instead of ten separate boxes */
 .tiles.home{gap:0!important;border:1px solid var(--line);border-radius:20px;overflow:hidden;background:var(--card)}
 .tiles.home .tile{border:0;border-radius:0;border-bottom:1px solid var(--line);background:transparent}
@@ -922,3 +921,16 @@ html.embedded::-webkit-scrollbar{display:none}
   .tiles.home .tile:nth-child(even){border-left:1px solid var(--line)}
   .tiles.home .tile:nth-last-child(2):nth-child(odd){border-bottom:0}
 }
+
+/* Directions: a single column list */
+.tiles.home{grid-template-columns:1fr!important;max-width:880px}
+.tiles.home .tile:nth-child(even){border-left:0!important}
+.tiles.home .tile:nth-last-child(2):nth-child(odd){border-bottom:1px solid var(--line)!important}
+.tiles.home .tile:last-child{border-bottom:0!important}
+
+/* Header: menu items never wrap to two lines */
+.main-nav a{white-space:nowrap}
+
+/* Home is just the hero now: it fills the first screen */
+.hero3{min-height:calc(100vh - var(--hdr-h));display:flex;align-items:center}
+.hero3>.wrap{width:100%}
