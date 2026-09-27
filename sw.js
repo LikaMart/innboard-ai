@@ -1,6 +1,6 @@
 /* Innboard.ai service worker: makes the site installable and usable offline.
    Change VERSION whenever you upload new files, so users get the update. */
-const VERSION = 'innboard-v2';
+const VERSION = 'innboard-v3';
 const CORE = [
   './',
   './index.html',
@@ -52,16 +52,13 @@ self.addEventListener('fetch', e => {
     return;
   }
 
-  /* Own files: serve from cache right away, refresh in the background */
+  /* Own files: network first, so new versions show immediately; cache only when offline */
   if (url.origin === location.origin) {
     e.respondWith(
-      caches.match(req).then(hit => {
-        const net = fetch(req).then(res => {
-          if (res.ok) { const copy = res.clone(); caches.open(VERSION).then(c => c.put(req, copy)); }
-          return res;
-        }).catch(() => hit);
-        return hit || net;
-      })
+      fetch(req).then(res => {
+        if (res.ok) { const copy = res.clone(); caches.open(VERSION).then(c => c.put(req, copy)); }
+        return res;
+      }).catch(() => caches.match(req))
     );
   }
 });

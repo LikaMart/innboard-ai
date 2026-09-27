@@ -1696,8 +1696,11 @@ document.documentElement.classList.add('ready');
 
 /* ---------- Web app (PWA) ---------- */
 /* Service worker: offline support. Works on https (Vercel, GitHub Pages) and localhost. */
-if('serviceWorker' in navigator&&/^https?:$/.test(location.protocol)&&!EMBEDDED_PAGE()){
-  window.addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));
+/* Local development (Live Server, localhost): no service worker, so edits always show right away */
+const LOCAL_DEV=/^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname);
+if('serviceWorker' in navigator){
+  if(LOCAL_DEV){navigator.serviceWorker.getRegistrations().then(rs=>rs.forEach(r=>r.unregister()));if(window.caches)caches.keys().then(ks=>ks.forEach(k=>caches.delete(k)))}
+  else if(location.protocol==='https:'&&!EMBEDDED_PAGE())window.addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));
 }
 function EMBEDDED_PAGE(){return new URLSearchParams(location.search).get('view')==='mobile'}
 /* Install button: shown only when the browser offers installation */
